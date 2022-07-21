@@ -26,7 +26,7 @@ class MotsCles
     private $mot_cle;
 
     /**
-     * @Gedmo\Slug(fields="mot_cle")
+     * @Gedmo\Slug(fields={"mot_cle"})
      * @ORM\Column(length=128, unique=true)
      */
     private $slug;

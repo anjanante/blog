@@ -29,7 +29,7 @@ class Articles
     private $titre;
 
     /**
-     * @Gedmo\Slug(fields="titre")
+     * @Gedmo\Slug(fields={"titre"})
      * @ORM\Column(length=128, unique=true)
      */
     private $slug;

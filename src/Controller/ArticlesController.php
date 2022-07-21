@@ -32,6 +32,7 @@ class ArticlesController extends AbstractController
             4
         );
         dump($articles);
+        // phpinfo();
         return $this->render('articles/index.html.twig', [
             'title' => 'Liste des articles',
             'articles' => $articles,
