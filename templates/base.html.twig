@@ -13,10 +13,6 @@
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
-
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
     </head>
     <body>
         <!-- Navigation-->
@@ -30,14 +26,33 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{path('home')}}">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{path('apropos')}}">Apropos</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{path('apropos')}}">A propos</a></li>
                         {# <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li> #}
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{path('contact')}}">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        {% block body %}{% endblock %}
+        
+         <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{asset(header_image)}}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>{{header_title}}</h1>
+                            <span class="subheading">{{header_desc}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+            {% block body %}{% endblock %}
+            </div>
+        </div>
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
@@ -45,7 +60,7 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
-                                <a href="https://www.linkedin.com/in/nante-rajaona/">
+                                <a href="https://www.linkedin.com/in/nante-rajaona/" target="blank">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -53,7 +68,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://web.facebook.com/anjanantenainar">
+                                <a href="https://web.facebook.com/anjanantenainar" target="blank">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
@@ -61,7 +76,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://github.com/anjanante">
+                                <a href="https://github.com/anjanante" target="blank">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-github fa-stack-1x fa-inverse"></i>
@@ -69,7 +84,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; <a href="https://www.linkedin.com/in/nante-rajaona/">Nantenaina RAJAONA</a> 2022</div>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; <a target="blank" href="https://www.linkedin.com/in/nante-rajaona/">Nantenaina RAJAONA</a> 2022</div>
                     </div>
                 </div>
             </div>
@@ -80,5 +95,8 @@
         <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
         <!-- Core theme JS-->
         <script src="{{ asset('js/scripts.js"') }}"></script>
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
     </body>
 </html>

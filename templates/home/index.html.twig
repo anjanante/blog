@@ -3,29 +3,30 @@
 {% block title %}Accueil!{% endblock %}
 
 {% block body %}
- <!-- Page Header-->
-<header class="masthead" style="background-image: url('assets/img/home-bg-1.jpg')">
-    <div class="container position-relative px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="site-heading">
-                    <h1>Clean Blog</h1>
-                    <span class="subheading">Un Blog d'autoformation symfony</span>
-                </div>
+
+    
+    <div class="col-md-10 col-lg-8 col-xl-7">
+        {% for article in articles %}
+            <!-- Post preview-->
+            <div class="post-preview">
+                <a href="post.html">
+                    <h2 class="post-title">{{ article.titre}} </h2>
+                    <h3 class="post-subtitle">{{ article.contenu|raw}}</h3>
+                </a>
+                <p class="post-meta">
+                    Posté par
+                    <a href="#!">nantenaina</a>
+                    le {{article.createdAt|date('d/m/Y')}}
+                </p>
             </div>
+            <!-- Divider-->
+            <hr class="my-4" />
+        {% endfor %}
+        <!-- Pager-->
+        <div class="d-flex justify-content-end mb-4">
+            {{ knp_pagination_render(articles) }}
+            <a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a>
         </div>
     </div>
-</header>
-<!-- Main Content-->
-<div class="container px-4 px-lg-5">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-        <h1>Hello {{ controller_name }}! ✅</h1>
 
-        This friendly message is coming from:
-        <ul>
-            <li>Your controller at <code><a href="{{ 'C:/wamp64/www/Frameworks/blog_sf4/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-            <li>Your template at <code><a href="{{ 'C:/wamp64/www/Frameworks/blog_sf4/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-        </ul>
-    </div>
-</div>
 {% endblock %}
