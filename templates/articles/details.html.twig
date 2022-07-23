@@ -1,12 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil!{% endblock %}
+{% block title %}Details{% endblock %}
 
 {% block body %}
-
-    
     <div class="col-md-10 col-lg-8 col-xl-7">
-        {% for article in articles %}
+        {# {% for article in articles %} #}
             <!-- Post preview-->
             <div class="post-preview">
                 <a href="{{path('actualites_details',{'id':article.id})}}">
@@ -22,11 +20,6 @@
             </div>
             <!-- Divider-->
             <hr class="my-4" />
-        {% endfor %}
-        <!-- Pager-->
-        <div class="d-flex justify-content-end mb-4">
-            {{ knp_pagination_render(articles) }}
-        </div>
+        {# {% endfor %} #}
     </div>
-
 {% endblock %}
