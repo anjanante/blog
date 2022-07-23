@@ -31,11 +31,27 @@ class ArticlesController extends AbstractController
             $request->query->getInt('page', 1), //num de la page en cours, 1 by default
             4
         );
-        dump($articles);
-        // phpinfo();
+       
         return $this->render('articles/index.html.twig', [
             'title' => 'Liste des articles',
             'articles' => $articles,
+        ]);
+    }
+
+    /**
+     * @Route("/{id}", name="details")
+     */
+    public function details(Request $request, PaginatorInterface $paginator, $id): Response
+    {
+       //liste de tous les articles
+        $article = $this->getDoctrine()->getRepository(Articles::class)->find($id);
+        // $articlesR = $ar->findAll();
+
+        return $this->render('articles/details.html.twig', [
+            'header_image' => 'assets/img/post-bg-1.jpg',
+            'header_title' => $article->getTitre(),
+            'header_desc' => '',
+            'article' => $article,
         ]);
     }
 }
