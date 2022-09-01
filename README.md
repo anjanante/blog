@@ -1,4 +1,7 @@
-## reprise du repository blog_sf4.git suite à une mise à jour de composer
+# Update of the repository blog_sf4.git
+
+## Install dependencies
+composer install
 
 ## Run local Server
 - symfony server:run
