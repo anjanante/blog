@@ -16,7 +16,7 @@ class AproposController extends AbstractController
         return $this->render('apropos/index.html.twig', [
             'header_image' => 'assets/img/about-bg-1.jpg',
             'header_title' => 'A propos de moi',
-            'header_desc' => 'Pour évoluer dans la vie, n\'arrête pas d\'apprendre',
+            'header_desc'  => 'Pour évoluer dans la vie, n\'arrête pas d\'apprendre',
         ]);
     }
 }
