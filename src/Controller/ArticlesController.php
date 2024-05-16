@@ -33,6 +33,9 @@ class ArticlesController extends AbstractController
         );
        
         return $this->render('articles/index.html.twig', [
+            'header_image' => 'assets/img/home-bg-1.jpg',
+            'header_title' => 'Articles list',
+            'header_desc'  => '',
             'title' => 'Liste des articles',
             'articles' => $articles,
         ]);

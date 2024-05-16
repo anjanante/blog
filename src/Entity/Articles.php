@@ -71,7 +71,7 @@ class Articles
     private $imageFile;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Users::class, inversedBy="articles")
+     * @ORM\ManyToOne(targetEntity=Users::class, inversedBy="articles", cascade={"persist", "remove" })
      * @ORM\JoinColumn(nullable=false)
      */
     private $users;
@@ -128,6 +128,20 @@ class Articles
     public function setContenu(string $contenu): self
     {
         $this->contenu = $contenu;
+
+        return $this;
+    }
+
+    /**
+     * Set $created_at
+     *
+     * @param  \DateTimeInterface  $created_at  $created_at
+     *
+     * @return  self
+     */ 
+    public function setCreatedAt(\DateTimeInterface $created_at)
+    {
+        $this->created_at = $created_at;
 
         return $this;
     }
@@ -257,4 +271,5 @@ class Articles
 
         return $this;
     }
+
 }
