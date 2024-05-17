@@ -17,33 +17,34 @@ class ContactFormType extends AbstractType
     {
         $builder
             ->add('nom', TextType::class, [
-                'label' => 'Nom',
+                'label' => 'Name',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Votre e-mail',
+                'label' => 'Your e-mail',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('sujet', TextType::class, [
-                'label' => 'Sujet',
+                'label' => 'Subject',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('tel', TelType::class, [
-                'label' => 'Numéro de téléphone',
+                'label' => 'Phone number',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('message', CKEditorType::class, [
-                'label' => 'Votre message',
+                'label' => 'Your message',
             ])
             ->add('Envoyer', SubmitType::class, [
+                'label' => 'Send',
                 'attr' => [
                     'class' => 'btn btn-primary'
                 ]

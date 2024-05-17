@@ -29,19 +29,19 @@ class ContactController extends AbstractController
             $mail->send(
                 $contact->get('email')->getData(),
                 'rajaonaanja@gmail.com',
-                'Contact depuis le site PetitesAnnonces',
+                'Contact from Nanté',
                 'contact',
                 $context
             );
 
-            $this->addFlash('message', 'Mail de contact envoyé');
+            $this->addFlash('message', 'Contact e-mail sent');
             return $this->redirectToRoute('contact');
         }
 
         return $this->render('contact/index.html.twig', [
             'header_image' => 'assets/img/contact-bg-1.jpg',
-            'header_title' => 'Contacter moi',
-            'header_desc' => 'Avez-vous des questions? J\'ai les réponses',
+            'header_title' => 'Contact me',
+            'header_desc' => "Do you have any questions? I've got the answers",
             'form' => $form->createView()
         ]);
     }

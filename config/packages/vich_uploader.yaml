@@ -4,5 +4,5 @@ vich_uploader:
     mappings:
         featured_images:
             uri_prefix: '%app.path.featured_images%'
-            namer: Vich\UploaderBundle\Naming\UniqidNamer #nommage des fichiers
+            namer: Vich\UploaderBundle\Naming\UniqidNamer #file naming
             upload_destination: '%kernel.project_dir%/public%app.path.featured_images%'
